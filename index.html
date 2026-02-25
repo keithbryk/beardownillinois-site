@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear Down Illinois - Keep the Bears Home</title>
+    <meta name="description" content="Join thousands of fans fighting to keep the Chicago Bears in Illinois. Sign the petition and stand with us.">
+    <style>
+        :root { --bears-navy: #0B162A; --bears-orange: #C8102E; --bears-gold: #E03C31; --white: #FFFFFF; --light-gray: #F5F5F5; --dark-gray: #333333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--dark-gray); }
+        header { background: var(--bears-navy); padding: 1rem 2rem; position: fixed; width: 100%; top: 0; z-index: 100; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: var(--white); font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .logo span { color: var(--bears-orange); }
+        nav a { color: var(--white); text-decoration: none; margin-left: 2rem; font-weight: 500; }
+        nav a:hover { color: var(--bears-orange); }
+        .hero { background: linear-gradient(135deg, var(--bears-navy) 0%, #1a2744 100%); color: var(--white); padding: 8rem 2rem 6rem; text-align: center; }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .hero h1 span { color: var(--bears-orange); }
+        .hero .subtitle { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
+        .hero-cta { display: inline-block; background: var(--bears-orange); color: var(--white); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.3s; }
+        .hero-cta:hover { transform: translateY(-2px); background: var(--bears-gold); }
+        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2.5rem; color: var(--bears-navy); text-align: center; margin-bottom: 1rem; }
+        .section-subtitle { text-align: center; color: #666; margin-bottom: 3rem; }
+        .stake-section { background: var(--light-gray); }
+        .stake-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .stake-card { background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--bears-orange); }
+        .stake-card h3 { color: var(--bears-navy); font-size: 1.25rem; margin-bottom: 1rem; }
+        .stake-card p { color: #555; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .why-card { text-align: center; padding: 2rem; }
+        .why-card .icon { font-size: 3rem; margin-bottom: 1rem; }
+        .why-card h3 { color: var(--bears-navy); font-size: 1.25rem; margin-bottom: 1rem; }
+        .petition-section { background: var(--bears-navy); color: var(--white); }
+        .petition-section .section-title { color: var(--white); }
+        .petition-form { max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 16px; }
+        .petition-form p { margin-bottom: 2rem; opacity: 0.9; text-align: center; }
+        .petition-form input { width: 100%; padding: 1rem; margin-bottom: 1rem; border: none; border-radius: 8px; font-size: 1rem; }
+        .petition-form button { width: 100%; background: var(--bears-orange); color: var(--white); padding: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; }
+        .petition-form button:hover { background: var(--bears-gold); }
+        .petition-count { text-align: center; margin-top: 2rem; opacity: 0.8; }
+        .groups-section { background: var(--light-gray); }
+        .groups-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .group-card { background: var(--white); padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 1rem; text-decoration: none; color: inherit; transition: transform 0.3s; }
+        .group-card:hover { transform: translateY(-3px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .group-icon { font-size: 2rem; }
+        .group-info h4 { color: var(--bears-navy); margin-bottom: 0.25rem; }
+        .group-info p { color: #666; font-size: 0.9rem; }
+        .newsletter-section { text-align: center; }
+        .newsletter-form { max-width: 500px; margin: 2rem auto 0; display: flex; gap: 1rem; }
+        .newsletter-form input { flex: 1; padding: 1rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        .newsletter-form button { background: var(--bears-navy); color: var(--white); padding: 1rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+        footer { background: var(--bears-navy); color: var(--white); padding: 3rem 2rem; text-align: center; }
+        .hashtags { margin-bottom: 1rem; }
+        .hashtags span { display: inline-block; background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 20px; margin: 0.25rem; font-size: 0.9rem; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .newsletter-form { flex-direction: column; } nav { display: none; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">🐻 Bear<span>Down</span>Illinois</a>
+            <nav>
+                <a href="#stake">What's At Stake</a>
+                <a href="#why">Why It Matters</a>
+                <a href="#petition">Sign Petition</a>
+                <a href="#groups">Groups</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>The Chicago Bears Belong to Chicago.<br>Let's <span>Keep It That Way.</span></h1>
+        <p class="subtitle">Join thousands of loyal fans fighting to ensure our beloved team stays in Illinois — where they were born, where they belong.</p>
+        <a href="#petition" class="hero-cta">Sign the Petition</a>
+    </section>
+    
+    <section class="stake-section" id="stake">
+        <h2 class="section-title">🏈 What's At Stake</h2>
+        <p class="section-subtitle">This isn't just about a team. It's about the future of Illinois football.</p>
+        <p style="text-align: center; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">The <strong>2025 season</strong> gave us something we haven't felt in decades: <strong>real hope.</strong></p>
+        
+        <div class="stake-grid">
+            <div class="stake-card">
+                <h3>🐻 Caleb Williams in Year 2</h3>
+                <p>The sophomore leap was real. The #1 overall pick took Year 2 by storm — sharper throws, better decision-making, and clutch performances that proved he's the real deal.</p>
+            </div>
+            <div class="stake-card">
+                <h3>🛡️ The Defense Dominated</h3>
+                <p>Monstrous. That's the word. The Monsters of the Midway woke up and reminded the NFL why they fear Chicago.</p>
+            </div>
+            <div class="stake-card">
+                <h3>📈 The Turnaround Was Real</h3>
+                <p>Year 1 established the foundation. Y}
